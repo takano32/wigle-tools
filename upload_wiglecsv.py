@@ -21,7 +21,7 @@ def upload(file_path) -> requests.Response:
     auth = HTTPBasicAuth(WIGLE_API_NAME, WIGLE_API_TOKEN)
 
     file_name = os.path.basename(file_path)
-    file = open(file_path, "rb")
+    file = open(file_path)
     file_data = file.read()
     file.close()
     files = {"file": (file_name, file_data)}
